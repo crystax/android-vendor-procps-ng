@@ -68,6 +68,7 @@ build:
 			--with-pic \
 			--enable-static \
 			--disable-shared \
+			--enable-watch8bit \
 			--disable-nls \
 			--disable-rpath \
 			&& \
