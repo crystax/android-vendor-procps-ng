@@ -210,3 +210,5 @@ done
 
 PATH=$BINDIR:$PATH
 export PATH
+
+unset NCURSES
