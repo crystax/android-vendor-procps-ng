@@ -59,8 +59,8 @@ build:
 		source $(TOPDIR)/android/envsetup.sh && \
 		mkdir -p $(call build-dir,$(ABI)) && \
 		cd $(call build-dir,$(ABI)) && \
-		ac_cv_func_malloc_0_nonnull=yes \
-		ac_cv_func_realloc_0_nonnull=yes \
+		export ac_cv_func_malloc_0_nonnull=yes && \
+		export ac_cv_func_realloc_0_nonnull=yes && \
 		LIBS='-ltinfow' \
 		$(TOPDIR)/configure \
 			--prefix=$(call install-dir,$(ABI)) \
@@ -72,7 +72,7 @@ build:
 			--disable-nls \
 			--disable-rpath \
 			&& \
-		make -j1 && \
+		make -j && \
 		make install && \
 		true \
 	)
